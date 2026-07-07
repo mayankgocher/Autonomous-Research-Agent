@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain-core
+langchain-community
+langgraph
+langchain-huggingface
+chromadb
+PyMuPDF
+duckduckgo-search
+arxiv
+reportlab
+pydantic
+python-dotenv
+httpx
+sqlite3; python_version < '3.0' # sqlite3 is built-in for modern Python, but just as placeholder
+pytest
