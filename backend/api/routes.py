@@ -18,8 +18,9 @@ def start_research(request: ResearchRequest, background_tasks: BackgroundTasks):
     research_id = cursor.lastrowid
     conn.close()
 
-    # In a real scenario, we start LangGraph agent workflow here via background_tasks
-    # background_tasks.add_task(run_research_workflow, research_id, request.query)
+    # Start LangGraph agent workflow in background
+    from workflow.graph import run_research_workflow
+    background_tasks.add_task(run_research_workflow, research_id, request.query)
 
     return ResearchResponse(id=research_id, query=request.query, status="pending")
 
